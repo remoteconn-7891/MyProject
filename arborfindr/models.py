@@ -1,9 +1,9 @@
-import datetime
-
 from django.db import models
 from django.utils import timezone
 from django.urls import reverse
 from django.core.exceptions import FieldDoesNotExist
+
+from PIL import Image
 
 # Create your models here.
 
@@ -19,11 +19,26 @@ class Homeowner(models.Model):
     def __str__(self):
 # String that represents Homeowner object
         return self.first_name
-
+    
 # Metadata
 class Meta:
     ordering = ['first_name', 'last_name', 'street_address', 'city', 'state']
     
+ # Model user (homeowner) profile class
+class HomeownerProfile(models.Model):
+    username = models.CharField(max_length=30)
+    profile_pic = models.ImageField(default='default.jpg', upload_to='profile_pics')
+    bio = models.CharField(max_length=200)
+    homeowner=models.ForeignKey(Homeowner, on_delete=models.CASCADE)
+
+    def __str__(self):
+# String that represents Homeowner profile object
+        return self.username
+    
+    # Metadata
+class Meta:
+    ordering = ['username', 'profile_pic', 'bio']
+
 # Model Arborist
 class Arborist(models.Model):
     business = models.CharField(max_length=30,

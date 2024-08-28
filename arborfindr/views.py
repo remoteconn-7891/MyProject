@@ -1,15 +1,27 @@
 import json
+
 from django.core.paginator import Paginator
+
 from django.core.serializers import serialize
+
 from django.http import JsonResponse
+
 from django.shortcuts import render, redirect
+
 from django.views import View
+
 from django.contrib.auth import update_session_auth_hash
+
 from django.contrib.auth.forms import PasswordChangeForm
+
 from django.http import HttpResponse
+
 from django.contrib.auth import login, authenticate
+
 from .new_password_form import UserForm
+
 from django.contrib.auth.forms import AuthenticationForm
+
 from .models import Arborist
 
 
@@ -57,7 +69,6 @@ def update_password(request):
          form = PasswordChangeForm(request.user)
     return render(request, 'registration/update_password.html', {'form': form})
 
-
 class ListTopArborists(View):
     # page limit set to 10
     page_limit = 10
@@ -98,7 +109,7 @@ class ListTopArborists(View):
                 "total": queryset.count()
             }
         }
-
+    
     # GET method to queryset parameters from model
     def get(self, request, *args, **kwargs):
         # parameters for queryset
@@ -142,4 +153,6 @@ class ListTopArborists(View):
         to_return = self.get_paginated_context(queryset, page, limit)
         return JsonResponse(to_return, status=200)
     
+def profile(request):
+    return render(request, 'profile/user_profile.html')
     
