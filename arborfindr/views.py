@@ -18,9 +18,15 @@ from django.http import HttpResponse
 
 from django.contrib.auth import login, authenticate
 
-from .new_password_form import UserForm
+from .forms import UserForm
 
 from django.contrib.auth.forms import AuthenticationForm
+
+from django.contrib.auth.decorators import login_required
+
+from django.contrib import messages
+
+from .forms import UpdateProfilePic
 
 from .models import Arborist
 
@@ -153,6 +159,24 @@ class ListTopArborists(View):
         to_return = self.get_paginated_context(queryset, page, limit)
         return JsonResponse(to_return, status=200)
     
-def profile(request):
-    return render(request, 'profile/user_profile.html')
     
+def profile(request):
+    profile = request.user.profile
+    return render(request, 'profile/user_profile.html', {'profile': profile})
+
+
+@login_required
+
+def profile(request):
+    if request.method == 'POST':
+        p_form = UpdateProfilePic(request.POST,
+                                  request.FILES,
+                                  instance=request.user.profile)
+        if p_form.is_valid():
+            p_form.save()
+            messages.success(request, f'Your profile has been updated!')
+            # Redirects to profile page
+            return redirect('profile')
+        
+
+    return render(request, 'profile/user_profile.html')

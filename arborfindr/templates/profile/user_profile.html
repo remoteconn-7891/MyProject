@@ -1,43 +1,27 @@
 {% extends "base.html" %}
-{% block title %}Profile Page{% endblock title %}
 {% block content %}
-    <div class="row my-3 p-3">
-        <h1>This is the profile page for {{user.username}}</h1>
-    </div>
-    <div class="row my-3 p-3">
-        <img class="rounded-circle account-img" src="{{ user.profile.profile_pic.url }}" style="cursor: pointer;"/>
-    </div>
-    {% if user_form.errors %}
-    <div class="alert alert-danger alert-dismissible" role="alert">
-        <div id="form_errors">
-            {% for key, value in user_form.error.items %}
-                <strong>{{ value }}</strong>
-                {% endfor %}
+<div class="content-section">
+    <div class="media">
+        <img 
+        class="rounded-circle account-img"
+        src="{{ user.profile_pic.url }}"
+        />
+        <div class="media-body">
+            <h2 class="account-heading">{{ user.first_name }}</h2>
+            <h2 class="account-heading">{{ user.last_name }}</h2>
+            <h2 class="account-heading">{{ user.bio }}</h2>
         </div>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">$times;</span>
-        </button>
     </div>
-{% endif %}
-<div class="form-content">
-    <form method="post" enctype="multipart/form-data">
+
+    <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        <div class="form-row">
-            <div class="col-md-5">
-                <div class="form-group">
-                    <label class="small mb-1">Username</label>
-                    <div class="form-group"></div>
-                    <hr>
-                    <label class="small mb-1">Update Profile Picture:</label>
-                    {{ profile_form.profile_pic }}
-                </div>
-                <label class="small mb-1">Bio:</label>
-                {{ profile_form.bio }}
-            </div>
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Homeowner Profile</legend>           
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Update Profile</button>
         </div>
-        <br><br>
-        <button type="submit" class="btn btn-dark btn-lg">Save updates</button>
-        <button type="reset" class="btn btn-dark btn-lg">Reset</button>
     </form>
 </div>
+
 {% endblock content %}
