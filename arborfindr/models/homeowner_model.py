@@ -21,11 +21,11 @@ class Homeowner(models.Model):
     profile_pic = models.ImageField(default='default.jpg', upload_to='profile_pics')
 
      # Metadata for Homeowner Model
-class Meta:
-    ordering = ['first_name', 'last_name', 'street_address', 'city', 'state', 'zip_code', 'bio', 'profile_pic']
+    class Meta:
+        ordering = ['first_name', 'last_name', 'street_address', 'city', 'state', 'zip_code', 'bio', 'profile_pic']
 
     def __str__(self):
-        return f'{self.user.username} Homeowner'
+        return f'{self.first_name} Homeowner'
 
     def save(self):
         super().save()

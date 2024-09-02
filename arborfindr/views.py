@@ -32,7 +32,7 @@ from .models import Arborist
 
 
 def index(request):
-    return render(request, "index.html", {})
+    return render(request, "arborist_search.html", {})
 
 def register(request):
     if request.method == 'POST':
@@ -165,7 +165,7 @@ class ListTopArborists(View):
     
     
 def profile(request):
-    profile = request.user.profile
+    profile = request.user.homeowner
     return render(request, 'profile/user_profile.html', {'profile': profile})
 
 
@@ -175,7 +175,7 @@ def profile(request):
     if request.method == 'POST':
         p_form = UpdateProfilePic(request.POST,
                                   request.FILES,
-                                  instance=request.user.profile)
+                                  instance=request.user.homeowner)
         if p_form.is_valid():
             p_form.save()
             messages.success(request, f'Your profile has been updated!')
