@@ -121,8 +121,9 @@ class ListTopArborists(View):
         # parameters for queryset
         page = request.GET.get('page')
         limit = request.GET.get('limit')
-        business = request.GET.get('business')
-        location = request.GET.get('location')
+        company = request.GET.get('company')
+        city = request.GET.get('city')
+        state = request.GET.get('state')
         services_type = request.GET.get('services_type')
         reviews = request.GET.get('reviews')
         years_experience = request.GET.get('years_experience')
@@ -134,11 +135,14 @@ class ListTopArborists(View):
 
         # start to filter out queryset based on object parameters
         # filter out business params
-        if business and business != "all":
-            queryset = queryset.filter(business=business)
+        if company and company != "all":
+            queryset = queryset.filter(company=company)
 
-        if location and location != "all":
-            queryset = queryset.filter(location=location)
+        if city and city != "all":
+            queryset = queryset.filter(city=city)
+
+        if state and state != "all":
+            queryset = queryset.filter(state=state)    
 
         if services_type and services_type != "all":
             queryset = queryset.filter(services_type=services_type)
