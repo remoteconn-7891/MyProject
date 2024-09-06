@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.models import User
 
 from PIL import Image
@@ -8,6 +8,7 @@ from PIL import Image
 # Create your models here.
 
 # Model Homeowner
+
 
 class Homeowner(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -27,8 +28,8 @@ class Homeowner(models.Model):
     def __str__(self):
         return f'{self.first_name} Homeowner'
 
-    def save(self):
-        super().save()
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
 
         # This opens the image of profile page
         img = Image.open(self.profile_pic.path)

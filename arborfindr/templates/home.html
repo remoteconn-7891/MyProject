@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+<h2>Welcome to the Django Schools! <span class="icon-emo-happy"></span></h2>
+<p class="lead">
+  If you already have an account <a href="{% url 'login' %}">log in</a>. If you are new to arborfindr, create an 
+  account <a href="{% url 'homeowner_register' %}">homeowner account</a> or a <a href="{% url 'company_register' %}">company account</a>.
+</p>
+{% endblock %}

@@ -9,7 +9,3 @@ def create_profile(sender, instance, created, **kwargs):
     if created:
         Homeowner.objects.create(user=instance)
 
-
-@receiver(post_save, sender=User)
-def update_profile(sender, instance, **kwargs):
-    instance.homeowner.save()
