@@ -17,4 +17,4 @@ class ServicesType(models.Model):
         # Metadata for ArboristReview Models
 
     def __str__(self):
-        return f'{self.arborist.tree_pruning} ServicesType'
+        return f'{self.tree_pruning} ServicesType'

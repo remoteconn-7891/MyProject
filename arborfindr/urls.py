@@ -1,13 +1,16 @@
 from django.urls import path
-from arborfindr.views import ListTopArborists, index
+from arborfindr.views import index
 from . import views
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls import include
+from django.urls import include, re_path
 from .views import profile
 
+
 urlpatterns = [
-path('api/get/top_arborists', ListTopArborists.as_view()),
+re_path(r'^search/', include('haystack.urls')),
 path('register/', views.register, name = 'register'),
 path('login/', views.user_login, name = 'login'),
 path('logout/', auth_views.LogoutView.as_view(), name='logout'),

@@ -1,0 +1,196 @@
+2024/09/07 17:36:49 [notice] 7780#4980: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 17:36:49 [emerg] 7780#4980: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 17:36:49 [emerg] 7780#4980: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 17:36:49 [notice] 15988#3716: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 17:36:49 [emerg] 15988#3716: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 17:36:49 [emerg] 15988#3716: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 17:36:52 [notice] 17224#16880: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 17:36:52 [emerg] 17224#16880: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 17:36:52 [emerg] 17224#16880: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 17:36:52 [notice] 14716#6700: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 17:36:52 [emerg] 14716#6700: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 17:36:52 [emerg] 14716#6700: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 18:29:09 [notice] 18916#8308: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 18:29:09 [emerg] 18916#8308: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 18:29:09 [emerg] 18916#8308: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 18:29:09 [notice] 4028#9760: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 18:29:09 [emerg] 4028#9760: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 18:29:09 [emerg] 4028#9760: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:14:17 [notice] 17152#3896: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:14:17 [emerg] 17152#3896: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:14:17 [emerg] 17152#3896: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:14:17 [notice] 13552#11384: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:14:17 [emerg] 13552#11384: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:14:17 [emerg] 13552#11384: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:19:06 [notice] 7836#8648: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:19:06 [emerg] 7836#8648: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:19:06 [emerg] 7836#8648: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:19:06 [notice] 2392#2056: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:19:06 [emerg] 2392#2056: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:19:06 [emerg] 2392#2056: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:19:09 [notice] 6092#18460: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:19:09 [emerg] 6092#18460: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:19:09 [emerg] 6092#18460: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:19:09 [notice] 5256#4940: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:19:09 [emerg] 5256#4940: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:19:09 [emerg] 5256#4940: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:19:10 [notice] 8520#7928: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:19:10 [emerg] 8520#7928: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:19:10 [emerg] 8520#7928: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:19:10 [notice] 12392#16808: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:19:10 [emerg] 12392#16808: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:19:10 [emerg] 12392#16808: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:19:12 [notice] 2320#15068: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:19:12 [emerg] 2320#15068: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:19:12 [emerg] 2320#15068: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:19:12 [notice] 16508#20372: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:19:12 [emerg] 16508#20372: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:19:12 [emerg] 16508#20372: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:19:13 [notice] 268#18392: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:19:13 [emerg] 268#18392: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:19:13 [emerg] 268#18392: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:19:14 [notice] 13816#18732: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:19:14 [emerg] 13816#18732: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:19:14 [emerg] 13816#18732: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:19:15 [notice] 17368#4176: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:19:15 [emerg] 17368#4176: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:19:15 [emerg] 17368#4176: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:19:15 [notice] 12912#12212: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:19:15 [emerg] 12912#12212: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:19:15 [emerg] 12912#12212: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:19:16 [notice] 8368#11116: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:19:16 [emerg] 8368#11116: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:19:16 [emerg] 8368#11116: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:19:16 [notice] 20476#18800: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:19:16 [emerg] 20476#18800: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:19:16 [emerg] 20476#18800: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:19:22 [notice] 5236#13168: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:19:22 [emerg] 5236#13168: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:19:22 [emerg] 5236#13168: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:19:22 [notice] 1648#12992: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:19:22 [emerg] 1648#12992: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:19:22 [emerg] 1648#12992: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:20:06 [notice] 16480#13336: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:20:06 [emerg] 16480#13336: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:20:06 [emerg] 16480#13336: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:20:06 [notice] 2348#4816: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:20:06 [emerg] 2348#4816: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:20:06 [emerg] 2348#4816: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:20:15 [notice] 20012#13056: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:20:15 [emerg] 20012#13056: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:20:15 [emerg] 20012#13056: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:20:15 [notice] 17836#9572: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:20:15 [emerg] 17836#9572: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:20:15 [emerg] 17836#9572: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:20:25 [notice] 12972#16664: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:20:25 [emerg] 12972#16664: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:20:25 [emerg] 12972#16664: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:20:25 [notice] 3356#16444: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:20:25 [emerg] 3356#16444: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:20:25 [emerg] 3356#16444: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:39:42 [notice] 17120#1168: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\"
+2024/09/07 20:39:42 [emerg] 17120#1168: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:39:42 [emerg] 17120#1168: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring
+2024/09/07 20:39:42 [notice] 17968#22076: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\"
+2024/09/07 20:39:42 [emerg] 17968#22076: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:39:42 [emerg] 17968#22076: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring
+2024/09/07 20:47:55 [notice] 20248#15004: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\"
+2024/09/07 20:47:55 [emerg] 20248#15004: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:47:55 [emerg] 20248#15004: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring
+2024/09/07 20:47:55 [notice] 22400#7100: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\"
+2024/09/07 20:47:55 [emerg] 22400#7100: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:47:55 [emerg] 22400#7100: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring
+2024/09/07 20:51:43 [notice] 19248#14248: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\"
+2024/09/07 20:51:43 [emerg] 19248#14248: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:51:43 [emerg] 19248#14248: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring
+2024/09/07 20:51:43 [notice] 17312#19316: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\"
+2024/09/07 20:51:43 [emerg] 17312#19316: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:51:43 [emerg] 17312#19316: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring
+2024/09/07 20:52:45 [notice] 20984#12932: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\"
+2024/09/07 20:52:45 [emerg] 20984#12932: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:52:45 [emerg] 20984#12932: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring
+2024/09/07 20:58:29 [notice] 18568#18404: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\"
+2024/09/07 20:58:29 [emerg] 18568#18404: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:58:29 [emerg] 18568#18404: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring
+2024/09/07 20:59:26 [notice] 16348#21876: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:59:26 [emerg] 16348#21876: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:59:26 [emerg] 16348#21876: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:59:26 [notice] 20912#1540: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:59:26 [emerg] 20912#1540: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:59:26 [emerg] 20912#1540: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:59:26 [notice] 14096#19444: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:59:26 [emerg] 14096#19444: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:59:26 [emerg] 14096#19444: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:59:26 [notice] 10696#1260: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:59:26 [emerg] 10696#1260: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:59:26 [emerg] 10696#1260: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:59:26 [notice] 14908#10220: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:59:26 [emerg] 14908#10220: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:59:26 [emerg] 14908#10220: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 20:59:26 [notice] 3832#9228: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe"
+2024/09/07 20:59:26 [emerg] 3832#9228: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 20:59:26 [emerg] 3832#9228: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx.exe" in NGINX environment variable, ignoring
+2024/09/07 21:04:59 [notice] 13928#2924: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\"
+2024/09/07 21:04:59 [emerg] 13928#2924: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 21:04:59 [emerg] 13928#2924: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring
+2024/09/07 21:04:59 [notice] 9520#20196: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\"
+2024/09/07 21:04:59 [emerg] 9520#20196: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 21:04:59 [emerg] 9520#20196: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring
+2024/09/07 21:05:25 [notice] 11704#15424: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\"
+2024/09/07 21:05:25 [emerg] 11704#15424: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 21:05:25 [emerg] 11704#15424: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring
+2024/09/07 21:05:25 [notice] 12236#16060: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\"
+2024/09/07 21:05:25 [emerg] 12236#16060: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 21:05:25 [emerg] 12236#16060: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring
+2024/09/07 21:07:00 [notice] 6056#12264: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\"
+2024/09/07 21:07:00 [emerg] 6056#12264: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 21:07:00 [emerg] 6056#12264: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring
+2024/09/07 21:08:24 [notice] 18892#16368: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\"
+2024/09/07 21:08:24 [emerg] 18892#16368: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 21:08:24 [emerg] 18892#16368: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring
+2024/09/07 21:08:24 [notice] 18892#16368: signal process started
+2024/09/07 21:08:39 [notice] 14148#8188: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\"
+2024/09/07 21:08:39 [emerg] 14148#8188: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 21:08:39 [emerg] 14148#8188: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring
+2024/09/07 21:08:39 [notice] 18164#16692: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\"
+2024/09/07 21:08:39 [emerg] 18164#16692: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 21:08:39 [emerg] 18164#16692: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring
+2024/09/07 21:11:44 [notice] 11512#12788: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\"
+2024/09/07 21:11:44 [emerg] 11512#12788: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 21:11:44 [emerg] 11512#12788: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring
+2024/09/07 21:11:44 [notice] 16340#21272: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\"
+2024/09/07 21:11:44 [emerg] 16340#21272: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 21:11:44 [emerg] 16340#21272: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring
+2024/09/07 23:34:07 [notice] 17724#19640: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\"
+2024/09/07 23:34:07 [emerg] 17724#19640: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 23:34:07 [emerg] 17724#19640: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring
+2024/09/07 23:34:07 [notice] 3404#16764: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\"
+2024/09/07 23:34:07 [emerg] 3404#16764: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 23:34:07 [emerg] 3404#16764: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring
+2024/09/07 23:34:16 [notice] 18168#12324: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\"
+2024/09/07 23:34:16 [emerg] 18168#12324: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 23:34:16 [emerg] 18168#12324: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring
+2024/09/07 23:34:16 [notice] 20380#8780: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\"
+2024/09/07 23:34:16 [emerg] 20380#8780: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring the rest of the variable
+2024/09/07 23:34:16 [emerg] 20380#8780: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring
+2024/09/07 23:39:08 [error] 9520#10460: *1 CreateFile() "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx-1.26.2/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2024/09/08 00:07:03 [error] 9520#10460: *10 CreateFile() "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\nginx-1.26.2/html/1000" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /1000 HTTP/1.1", host: "localhost"
+2024/09/09 15:54:24 [notice] 3972#19432: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\"
+2024/09/09 15:54:24 [emerg] 3972#19432: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring the rest of the variable
+2024/09/09 15:54:24 [emerg] 3972#19432: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring
+2024/09/09 15:54:24 [notice] 3972#19432: signal process started
+2024/09/09 15:54:24 [notice] 18764#20916: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\"
+2024/09/09 15:54:24 [emerg] 18764#20916: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring the rest of the variable
+2024/09/09 15:54:24 [emerg] 18764#20916: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring
+2024/09/09 15:58:14 [notice] 20956#1784: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\"
+2024/09/09 15:58:14 [emerg] 20956#1784: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring the rest of the variable
+2024/09/09 15:58:14 [emerg] 20956#1784: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring
+2024/09/09 15:58:14 [notice] 6700#15892: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\"
+2024/09/09 15:58:14 [emerg] 6700#15892: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring the rest of the variable
+2024/09/09 15:58:14 [emerg] 6700#15892: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring
+2024/09/10 01:44:10 [notice] 9288#16624: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\"
+2024/09/10 01:44:10 [emerg] 9288#16624: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring the rest of the variable
+2024/09/10 01:44:10 [emerg] 9288#16624: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring
+2024/09/10 01:44:10 [notice] 16880#16432: using inherited sockets from "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\"
+2024/09/10 01:44:10 [emerg] 16880#16432: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring the rest of the variable
+2024/09/10 01:44:10 [emerg] 16880#16432: invalid socket number "C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\MyNginx\" in NGINX environment variable, ignoring

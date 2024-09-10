@@ -1,0 +1,2 @@
+root: C:\Users\corey james\Documents\CJProjects\treesbegone\MyProject\VueJS\nvm
+path: C:\Program Files\nodejs

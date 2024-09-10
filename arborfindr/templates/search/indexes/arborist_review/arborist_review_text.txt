@@ -1,0 +1,6 @@
+{{object.one_star}}
+{{object.two_stars}}
+{{object.three_stars}}
+{{object.four_stars}}
+{{object.five_stars}}
+{{object.review_by_homeowner}}

@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-v9-r(x&@k-1s8o50v8r^qtcd1yr2r@uv_t2rj$@pq*(xaj@ki_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','localhost', 'www.arborhub.io']
 
 
 # Application definition
@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'haystack'
+    'haystack',
     'arborfindr.apps.ArborfindrConfig',
     'django_filters',
 ]
