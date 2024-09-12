@@ -1,10 +1,4 @@
-import json
-
-from django.core.paginator import Paginator
-
 from django.core.serializers import serialize
-
-from django.http import JsonResponse
 
 from django.shortcuts import render, redirect
 
@@ -29,6 +23,10 @@ from django.contrib import messages
 from .forms import UpdateProfilePic
 
 from .models import Arborist
+
+from haystack.generic_views import SearchView
+
+from haystack.query import SearchQuerySet
 
 
 def index(request):
@@ -97,3 +95,10 @@ def profile(request):
         
 
     return render(request, 'profile/user_profile.html')
+
+
+class ArboristSearchView(SearchView):
+    template_name = 'arborist_search.html'
+    # Custom search view for the queryset
+    queryset = SearchQuerySet().filter(arborist_city='Denver')
+    
