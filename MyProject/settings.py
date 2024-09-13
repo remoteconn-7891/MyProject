@@ -1,5 +1,7 @@
 
 import os
+import environ
+
 
 """
 Django settings for MyProject project.
@@ -19,6 +21,11 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Initialize environment variables
+env = environ.Env()
+
+# Optionally read the .env file if not loaded automatically by your environment
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -54,7 +61,6 @@ HAYSTACK_CONNECTIONS = {
         # 'URL': 'http://127.0.0.1:8983/solr/mysite',
     },
 }
-
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -100,14 +106,7 @@ WSGI_APPLICATION = 'MyProject.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "arborDB",
-        "USER": "postgres",
-        "PASSWORD": "Arbortek87",
-        "HOST": "localhost",
-        "PORT": "5432",
-    }
+    'default': env.db("DATABASE_URL")
 }
 
 
