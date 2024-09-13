@@ -23,6 +23,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('arborfindr/', include('arborfindr.urls')),
-    path('', RedirectView.as_view(url='/arborfindr/')), 
+    # path('', RedirectView.as_view(url='/arborfindr/')), 
+    path('', RedirectView.as_view(url='/arborhub/'), name='arborhub'),
     path('admin/', admin.site.urls),
 ] 

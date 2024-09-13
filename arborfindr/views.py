@@ -81,7 +81,6 @@ def profile(request):
 
 
 @login_required
-
 def profile(request):
     if request.method == 'POST':
         p_form = UpdateProfilePic(request.POST,
