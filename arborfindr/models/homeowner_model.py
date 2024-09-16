@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.models import User
-
+from django.conf import settings
 from PIL import Image
 
 
@@ -23,7 +23,7 @@ class Homeowner(models.Model):
 
      # Metadata for Homeowner Model
     class Meta:
-        ordering = ['first_name', 'last_name', 'street_address', 'city', 'state', 'zip_code', 'bio', 'profile_pic']
+        ordering = ['first_name', 'last_name', 'street_address', 'city', 'state', 'zip_code', 'bio']
 
     def __str__(self):
         return f'{self.first_name} Homeowner'
@@ -40,3 +40,8 @@ class Homeowner(models.Model):
             img.thumbnail(output_size)
             # Saves again
             img.save(self.profile_pic.path)
+
+class User(AbstractUser):
+    email = models.EmailField('Email Address', unique=True)
+    role = models.CharField(max_length=1, choices=[('c', 'Company', 'e', 'Employee')])
+

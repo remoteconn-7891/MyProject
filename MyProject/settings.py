@@ -50,7 +50,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'haystack',
     'arborfindr.apps.ArborfindrConfig',
-    'django_filters',
 ]
 
 HAYSTACK_CONNECTIONS = {

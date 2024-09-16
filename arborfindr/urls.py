@@ -4,9 +4,7 @@ from . import views
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
-from django.conf.urls import include
 from django.urls import include, re_path
-from .views import profile, ArboristSearchView
 
 
 urlpatterns = [

@@ -1,4 +1,4 @@
-from django.core.serializers import serialize
+
 
 from django.shortcuts import render, redirect
 
@@ -7,8 +7,6 @@ from django.views import View
 from django.contrib.auth import update_session_auth_hash
 
 from django.contrib.auth.forms import PasswordChangeForm
-
-from django.http import HttpResponse
 
 from django.contrib.auth import login, authenticate
 
