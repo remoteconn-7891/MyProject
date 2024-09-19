@@ -72,12 +72,6 @@ def update_password(request):
     return render(request, 'registration/update_password.html', {'form': form})
 
 
-    
-def profile(request):
-    profile = request.user.homeowner
-    return render(request, 'profile/user_profile.html', {'profile': profile})
-
-
 @login_required
 def profile(request):
     if request.method == 'POST':

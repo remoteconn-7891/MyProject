@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import Homeowner, ArboristCompany
+from .models import Homeowner, ArboristCompany, HomeownerUser
 from haystack.forms import SearchForm
 
 
@@ -18,8 +18,8 @@ class UserForm(UserCreationForm):
 
 class UpdateProfilePic(forms.ModelForm):
    class Meta:
-      model = Homeowner
-      fields = ('profile_pic')
+      model = HomeownerUser
+      fields = ['profile_pic']
 
 class HomeownerForm(forms.ModelForm):
    class Meta:
@@ -34,7 +34,7 @@ class HomeownerForm(forms.ModelForm):
 class CompanyForm(forms.ModelForm):
    class Meta:
       model = ArboristCompany
-      fields = ('company_name')
+      fields = ['company_name']
 
 class CitySearchForm(SearchForm):
    find_city = forms.CharField(required=False)
