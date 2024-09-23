@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+<h1>Edit Company Profile</h1>
+<form method="post" enctype="multipart/form_data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update</button>
+</form>
+
+{% endblock %}

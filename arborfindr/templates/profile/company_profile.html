@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="content-section">
+    <a href="{% url 'profile:edit_company_profile' %}">Edit Company Profile</a>
     <div class="media">
-        <img 
+        <img
         class="rounded-circle account-img"
         src="{{ user.profile_pic.url }}"
         />
@@ -16,7 +17,7 @@
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Homeowner Profile</legend>           
+            <legend class="border-bottom mb-4">Company Profile</legend>
         </fieldset>
         <div class="form-group">
             <button class="btn btn-outline-info" type="submit">Update Profile</button>

@@ -4,17 +4,16 @@ from . import views
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
-from django.urls import include, re_path
 
-
+app_name = 'arborfindr'
 urlpatterns = [
-re_path(r'^search/', include('haystack.urls')),
-
 path('register/', views.register, name = 'register'),
 path('login/', views.user_login, name = 'login'),
-path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-# URL paths for updating password
+path('logout/', auth_views.LogoutView.as_view(), name = 'logout'),
 path('update_password/', views.update_password, name = 'update_password'),
-path('profile/', views.profile, name ='user_profile'),
-path('', index),
+path('homeowner_profile/', views.homeowner_profile, name = 'homeowner_profile'),
+path('company_profile/', views.company_profile, name = 'company_profile'),
+path('edit_homeowner_profile/', views.edit_homeowner_profile, name = 'edit_homeowner_profile'),
+path('edit_company_profile/', views.edit_company_profile, name = 'edit_company_profile'),
+path('arborfindr/', index),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

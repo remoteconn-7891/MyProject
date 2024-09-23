@@ -36,7 +36,7 @@ SECRET_KEY = 'django-insecure-v9-r(x&@k-1s8o50v8r^qtcd1yr2r@uv_t2rj$@pq*(xaj@ki_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','localhost', 'www.arborhub.io']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -48,8 +48,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'haystack',
-    'arborfindr.apps.ArborfindrConfig',
+    'django_extensions',
+    'arborfindr',
 ]
 
 HAYSTACK_CONNECTIONS = {
@@ -85,7 +87,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates'),
-                 os.path.join(BASE_DIR, 'arborfindr', 'templates', 'arborfindr')],
+                 os.path.join(BASE_DIR,'arborfindr',"templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

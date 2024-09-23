@@ -1,8 +1,4 @@
-
-
 from django.shortcuts import render, redirect
-
-from django.views import View
 
 from django.contrib.auth import update_session_auth_hash
 
@@ -10,25 +6,18 @@ from django.contrib.auth.forms import PasswordChangeForm
 
 from django.contrib.auth import login, authenticate
 
-from .forms import UserForm
+from .forms import UserForm, HomeownerUserForm, ArboristCompanyForm
 
 from django.contrib.auth.forms import AuthenticationForm
 
 from django.contrib.auth.decorators import login_required
 
-from django.contrib import messages
-
-from .forms import UpdateProfilePic
-
-from .models import Arborist
-
 from haystack.generic_views import SearchView
 
 from haystack.query import SearchQuerySet
 
-
 def index(request):
-    return render(request, "arborist_search.html", {})
+    return render(request, 'search/indexes/arborfindr/search_arborist.html', {})
 
 def register(request):
     if request.method == 'POST':
@@ -39,10 +28,11 @@ def register(request):
             password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=password)
             login(request, user)
-            return redirect('register.html')  # index will be home page for now
+            return redirect('search_arborist.html')  # index will be home page for now
     else:
         form = UserForm()
     return render(request, 'registration/register.html', {'form': form})
+
 
 def user_login(request):
     if request.method == 'POST':
@@ -53,12 +43,11 @@ def user_login(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('index.html') 
+                return redirect('search_arborist.html')
     else:
         form = AuthenticationForm()
     return render(request, 'registration/login.html', {'form': form})
 
-# View class for changing password
 
 def update_password(request):
     if request.method == 'POST':
@@ -66,30 +55,42 @@ def update_password(request):
         if form.is_valid():
             user = form.save()
             update_session_auth_hash(request, user)  # To keep the user logged in
-            return redirect('index.html')        
+            return redirect('search_arborist.html')
     else:
          form = PasswordChangeForm(request.user)
     return render(request, 'registration/update_password.html', {'form': form})
-
+@login_required
+def homeowner_profile(request):
+    profile = request.user.profile
+    return render(request,'/profile/homeowner_profile.html', {'homeowner_profile': homeowner_profile})
 
 @login_required
-def profile(request):
+def company_profile(request):
+    profile = request.user.profile
+    return render(request, 'profile/company_profile.html', {'profile': profile})
+
+@login_required
+def edit_homeowner_profile(request):
+    profile = request.user.profile
     if request.method == 'POST':
-        p_form = UpdateProfilePic(request.POST,
-                                  request.FILES,
-                                  instance=request.user.homeowner)
-        if p_form.is_valid():
-            p_form.save()
-            messages.success(request, f'Your profile has been updated!')
-            # Redirects to profile page
-            return redirect('profile')
-        
+        form = HomeownerUserForm(request.POST, request.FILES, instance = profile)
+        if form.is_valid():
+            form.save()
+            return redirect('search_arborist.html')
 
-    return render(request, 'profile/user_profile.html')
+        else:
+            form = HomeownerUserForm(instance = profile)
+        return render(request, 'profile/edit_homeowner_profile', {'form': form})
 
+@login_required
+def edit_company_profile(request):
+    profile = request.user.profile
+    if request.method == 'POST':
+        form = ArboristCompanyForm(request.POST, request.FILES, instance=profile)
+        if form.is_valid():
+            form.save()
+            return redirect('search_arborist.html')
 
-class ArboristSearchView(SearchView):
-    template_name = 'arborist_search.html'
-    # Custom search view for the queryset
-    queryset = SearchQuerySet().filter(arborist_city='Denver')
-    
+        else:
+            form = ArboristCompanyForm(instance=profile)
+        return render(request, 'profile/edit_company_profile', {'form': form})

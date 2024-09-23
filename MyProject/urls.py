@@ -22,8 +22,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('arborfindr/', include('arborfindr.urls')),
-    # path('', RedirectView.as_view(url='/arborfindr/')), 
-    path('', RedirectView.as_view(url='/arborhub/'), name='arborhub'),
+    path('', include('arborfindr.urls')),
+    path("accounts/", include("django.contrib.auth.urls")),
     path('admin/', admin.site.urls),
 ] 

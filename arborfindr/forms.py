@@ -1,12 +1,10 @@
 from django import forms
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
-from .models import Homeowner, ArboristCompany, HomeownerUser
+from .models import HomeownerUser, ArboristCompany
 from haystack.forms import SearchForm
-
+from django.contrib.auth.forms import UserCreationForm
 
 class UserForm(UserCreationForm):
-   
    class Meta:
       model = User
       fields = (
@@ -14,27 +12,16 @@ class UserForm(UserCreationForm):
          'password',
       )
 
-
-
-class UpdateProfilePic(forms.ModelForm):
+class HomeownerUserForm(forms.ModelForm):
    class Meta:
       model = HomeownerUser
-      fields = ['profile_pic']
+      fields = ['bio', 'profile_pic']
 
-class HomeownerForm(forms.ModelForm):
-   class Meta:
-      model = Homeowner
-      fields = ('first_name',
-                'last_name',
-                'street_address',
-                'city',
-                'state',
-                'zip_code')
-
-class CompanyForm(forms.ModelForm):
+class ArboristCompanyForm(forms.ModelForm):
    class Meta:
       model = ArboristCompany
-      fields = ['company_name']
+      fields = ['company_name', 'company_logo']
+
 
 class CitySearchForm(SearchForm):
    find_city = forms.CharField(required=False)
