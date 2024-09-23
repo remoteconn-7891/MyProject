@@ -1,0 +1,10 @@
+services:
+  database:
+    image: postgresql
+    ports:
+      - "5432:5432"
+    environment:
+        POSTGRESQL_DATABASE: arborviewdb
+        POSTGRESQL_USER: postgres
+        POSTGRESQL_PASSWORD: Arbortek87
+        HOST: localhost
