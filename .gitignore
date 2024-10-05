@@ -88,4 +88,5 @@ MyNginx/
 local_settings.py
 
 .env
+.venv
 db.sqlite3
