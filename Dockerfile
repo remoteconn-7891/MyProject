@@ -1,15 +1,23 @@
-# Dockerfile
-# The first instruction is what image we want to base our container on
-# We use an official Python runtime as a parenet image
-FROM python:3.12
+# Use the official Python image from the Docker Hub
+FROM python:3.10
 
-# Set environment variables
-# ENV PYTHONDONTWRITEBYTECODE 1
-# ENV PYTHONUNBUFFERED 1
-# Set work directory
-WORKDIR /code
-# Install dependenciesRUN pip install pipenv
-# COPY Pipfile Pipfile.lock /code/
-# RUN pip install pipenv && pipenv install --system
-# Copy project
-COPY . /code/
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the requirements file into the container
+COPY requirements.txt .
+
+# Install the dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the entire project into the container
+COPY . .
+
+# Make migrations
+RUN python manage.py migrate
+
+# Expose the port the app runs on
+EXPOSE 8000
+
+# Command to run the application
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "MyProject.wsgi:application"]

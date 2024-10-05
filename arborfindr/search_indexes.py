@@ -6,7 +6,7 @@ class ArboristIndex(indexes.SearchIndex, indexes.Indexable):
     text = indexes.EdgeNgramField(document=True, use_template=True)
     arborist_city = indexes.CharField(model_attr='arborist_city')
     arborist_state = indexes.CharField(model_attr='arborist_state')
-    price = indexes.IntegerField(model_attr='price', null='True')
+    price = indexes.IntegerField(model_attr='price', null=True)  # corrected
 
     def get_model(self):
         return Arborist
@@ -26,11 +26,11 @@ class ArboristCompanyIndex(indexes.SearchIndex, indexes.Indexable):
 
 class ArboristReviewIndex(indexes.SearchIndex, indexes.Indexable):
     text = indexes.EdgeNgramField(document=True, use_template=True)
-    one_star = indexes.IntegerField(model_attr='one_star', default=0, null=True, blank=True)
-    two_stars = indexes.IntegerField(model_attr='two_stars', default=0, null=True, blank=True)
-    three_stars = indexes.IntegerField(model_attr='three_stars', default=0, null=True, blank=True)
-    four_stars = indexes.IntegerField(model_attr='four_stars', default=0, null=True, blank=True)
-    five_stars = indexes.IntegerField(model_attr='five_stars', default=0, null=True, blank=True)
+    one_star = indexes.IntegerField(model_attr='one_star', default=0, null=True)  # corrected
+    two_stars = indexes.IntegerField(model_attr='two_stars', default=0, null=True)  # corrected
+    three_stars = indexes.IntegerField(model_attr='three_stars', default=0, null=True)  # corrected
+    four_stars = indexes.IntegerField(model_attr='four_stars', default=0, null=True)  # corrected
+    five_stars = indexes.IntegerField(model_attr='five_stars', default=0, null=True)  # corrected
     review_by_homeowner = indexes.CharField(model_attr='reviews_by_reviewes')
 
     def get_model(self):
@@ -55,4 +55,3 @@ class ServicesTypeIndex(indexes.SearchIndex, indexes.Indexable):
     
     def index_queryset(self, using=None):
         return self.get_model().objects.all()
-    

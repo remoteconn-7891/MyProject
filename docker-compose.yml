@@ -1,10 +1,26 @@
+version: '3.8'
+
 services:
-  database:
-    image: postgresql
+  web:
+    build: .
+    volumes:
+      - .:/app
     ports:
-      - "5432:5432"
+      - "8000:8000"
     environment:
-        POSTGRESQL_DATABASE: arborviewdb
-        POSTGRESQL_USER: postgres
-        POSTGRESQL_PASSWORD: Arbortek87
-        HOST: localhost
+      - DEBUG=1
+    depends_on:
+      - solr
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"
+  
+  solr:
+    image: solr:latest
+    ports:
+      - "8984:8983"
+    volumes:
+      - solr_data:/var/solr
+    command: solr-foreground
+
+volumes:
+  solr_data:
