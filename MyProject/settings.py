@@ -2,6 +2,20 @@
 import os
 import environ
 
+from pathlib import Path
+
+# Initialize environment variables
+env = environ.Env()
+# Read the .env file if it exists
+environ.Env.read_env(os.path.join(Path(__file__).resolve().parent.parent, '.env'))
+
+# Log the values of the environment variables
+print(f"DATABASE_NAME: {env('DATABASE_NAME')}")
+print(f"DATABASE_USER: {env('DATABASE_USER')}")
+print(f"DATABASE_PASSWORD: {env('DATABASE_PASSWORD')}")
+print(f"DATABASE_HOST: {env('DATABASE_HOST')}")
+print(f"DATABASE_PORT: {env('DATABASE_PORT')}")
+
 
 """
 Django settings for MyProject project.
@@ -114,14 +128,17 @@ WSGI_APPLICATION = 'MyProject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': env.db("DATABASE_URL")
-}
+
+
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env('DATABASE_NAME', default='arbordb'),  # Use env to get DB name
+        'USER': env('DATABASE_USER', default='postgres'),  # Use env to get user
+        'PASSWORD': env('DATABASE_PASSWORD', default='arborco87'),  # Use env to get password
+        'HOST': env('DATABASE_HOST', default='localhost'),  # Use env to get host
+        'PORT': env('DATABASE_PORT', default='5432'),  # Use env to get port
     }
 }
 

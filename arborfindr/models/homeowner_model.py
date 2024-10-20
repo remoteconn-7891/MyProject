@@ -15,7 +15,7 @@ class Homeowner(models.Model):
     state = models.CharField(max_length=30)
     zip_code = models.PositiveIntegerField()
     profile_pic = models.ImageField(default='default.jpg', upload_to='profile_pics')
-    bio = models.CharField(max_length=100, db_default='')
+    bio = models.CharField(max_length=100)
 
 
      # Metadata for Homeowner Model
