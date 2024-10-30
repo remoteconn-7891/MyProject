@@ -70,19 +70,11 @@ INSTALLED_APPS = [
 
 HAYSTACK_CONNECTIONS = {
     'default': {
-        'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
-        'URL': 'http://127.0.0.1:8983/solr'
-        # ...or for multicore...
-        # 'URL': 'http://127.0.0.1:8983/solr/mysite',
+        'BACKEND': 'haystack.backends.solr_backend.SolrBackend',
+        'URL': 'http://localhost:8983/solr/core_arbor/',  # Adjust the core name as necessary
+        'INCLUDE_SPELLING': True,
     },
 }
-
-# HAYSTACK_CONNECTIONS = {
-#     'default': {
-#         'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
-#         'URL': 'http://127.0.0.1:8983/solr/my_django_core',
-#     },
-# }
 
 
 
@@ -91,6 +83,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'your_email@gmail.com'
+
 EMAIL_HOST_PASSWORD = 'your_email_password'
 
 MIDDLEWARE = [

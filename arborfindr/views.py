@@ -6,6 +6,7 @@ from django.contrib.auth.forms import PasswordChangeForm
 
 from django.contrib.auth import login, authenticate
 
+
 from .forms import UserForm, HomeownerUserForm, ArboristCompanyForm
 
 from django.contrib.auth.forms import AuthenticationForm
@@ -16,8 +17,23 @@ from haystack.generic_views import SearchView
 
 from haystack.query import SearchQuerySet
 
+
+class ArboristSearchView(SearchView):
+    template_name = 'search/arborist_search_arborist.html'
+
+    def get_queryset(self):
+        queryset = SearchQuerySet().models(ArboristCompany)
+
+        query = self.request.GET.get('q', None)
+
+        if query:
+            queryset = queryset.filter(content=query)
+
+        return queryset
+
+
 def index(request):
-    return render(request, 'search/indexes/arborfindr/search_arborist.html', {})
+        return render(request, 'search/indexes/arborfindr/search_arborist.html', {})
 
 def register(request):
     if request.method == 'POST':

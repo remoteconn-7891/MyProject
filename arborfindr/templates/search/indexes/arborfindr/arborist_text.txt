@@ -1,3 +1,0 @@
-{{ object.title }}
-{{ object.company.get_company_name }}
-{{ object.body }}

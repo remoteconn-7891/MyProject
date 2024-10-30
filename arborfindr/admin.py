@@ -1,3 +1,5 @@
+
+from django.contrib.auth import get_user_model
 from django.contrib import admin
 from .models import Homeowner
 from .models import Arborist
@@ -5,12 +7,31 @@ from .models import ArboristReview
 from .models import ServicesType
 from .models import ArboristCompany
 
+
+User = get_user_model()
+admin.site.register(User)
+
 # Register your models here.
 
-admin.site.register([Homeowner])
-admin.site.register([Arborist])
-admin.site.register([ArboristReview])
-admin.site.register([ServicesType])
-admin.site.register([ArboristCompany])
+@admin.register(Homeowner)
+class HomeownerAdmin(admin.ModelAdmin):
+    list_display = ('bio', 'profile_pic')
+
+@admin.register(Arborist)
+class ArboristAdmin(admin.ModelAdmin):
+    list_display = ('arborist_city', 'arborist_state', 'years_experience', 'price')  # Adjust as per your model fields
+
+@admin.register(ArboristReview)
+class ArboristReviewAdmin(admin.ModelAdmin):
+    list_display = ('one_star', 'two_stars', 'three_stars', 'four_stars', 'five_stars', 'review_by_homeowner')
+
+@admin.register(ServicesType)
+class ServicesTypeAdmin(admin.ModelAdmin):
+    list_display = ('tree_pruning', 'tree_removal', 'tree_planting', 'pesticide_applications', 'soil_management',
+                    'tree_protection', 'tree_risk_management', 'tree_biology')
+
+@admin.register(ArboristCompany)
+class ArboristCompanyAdmin(admin.ModelAdmin):
+    list_display = ('company_name', 'company_logo')
 
 

@@ -1,28 +1,23 @@
 from haystack import indexes
-from .models import Arborist, ArboristCompany, ArboristReview, ServicesType
+from .models import ArboristCompany, ArboristReview, ServicesType
 
-
-class ArboristIndex(indexes.SearchIndex, indexes.Indexable):
-    text = indexes.EdgeNgramField(document=True, use_template=True)
-    arborist_city = indexes.CharField(model_attr='arborist_city')
-    arborist_state = indexes.CharField(model_attr='arborist_state')
-    price = indexes.IntegerField(model_attr='price', null=True)  # corrected
-
-    def get_model(self):
-        return Arborist
-    
-    def index_queryset(self, using=None):
-        return self.get_model().objects.all()
 
 class ArboristCompanyIndex(indexes.SearchIndex, indexes.Indexable): 
     text = indexes.EdgeNgramField(document=True, use_template=True)
-    company_name = indexes.CharField(model_attr='company')
+    company_name = indexes.CharField(model_attr='company_name')
+    company_city = indexes.CharField(model_attr='company_city')
+    company_state = indexes.CharField(model_attr='company_state')
+    company_price = indexes.IntegerField(model_attr='company_price', null=True)
+    experience = indexes.CharField(model_attr='experience')
 
     def get_model(self):
         return ArboristCompany
-    
+
     def index_queryset(self, using=None):
-        return self.get_model().objects.all()
+        qs = self.get_model().objects.all()  # Get the queryset
+        print(f'Indexing {qs.count()} Arborist records')  # Print the count of records
+        return qs
+
 
 class ArboristReviewIndex(indexes.SearchIndex, indexes.Indexable):
     text = indexes.EdgeNgramField(document=True, use_template=True)
@@ -31,13 +26,15 @@ class ArboristReviewIndex(indexes.SearchIndex, indexes.Indexable):
     three_stars = indexes.IntegerField(model_attr='three_stars', default=0, null=True)  # corrected
     four_stars = indexes.IntegerField(model_attr='four_stars', default=0, null=True)  # corrected
     five_stars = indexes.IntegerField(model_attr='five_stars', default=0, null=True)  # corrected
-    review_by_homeowner = indexes.CharField(model_attr='reviews_by_reviewes')
+    review_by_homeowner = indexes.CharField(model_attr='reviews_by_homeowner')
 
     def get_model(self):
         return ArboristReview
-    
+
     def index_queryset(self, using=None):
-        return self.get_model().objects.all()
+        qs = self.get_model().objects.all()  # Get the queryset
+        print(f'Indexing {qs.count()} ArboristReviews records')  # Print the count of records
+        return qs
 
 class ServicesTypeIndex(indexes.SearchIndex, indexes.Indexable):
     text = indexes.EdgeNgramField(document=True, use_template=True)
@@ -52,6 +49,8 @@ class ServicesTypeIndex(indexes.SearchIndex, indexes.Indexable):
 
     def get_model(self):
         return ServicesType
-    
+
     def index_queryset(self, using=None):
-        return self.get_model().objects.all()
+        qs = self.get_model().objects.all()  # Get the queryset
+        print(f'Indexing {qs.count()} ServicesType records')  # Print the count of records
+        return qs
