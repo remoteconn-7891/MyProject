@@ -98,22 +98,30 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'MyProject.urls'
 
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates'),
-                 os.path.join(BASE_DIR,'arborfindr',"templates")],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'arborfindr', 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.request',  # Required for admin
+                'django.contrib.auth.context_processors.auth',  # Required for admin
+                'django.contrib.messages.context_processors.messages',  # Required for admin
+                # Include any additional context processors you need
             ],
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'MyProject.wsgi.application'
 

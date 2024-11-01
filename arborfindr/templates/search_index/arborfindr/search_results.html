@@ -1,0 +1,12 @@
+<h1>Search Results</h1>
+{% if query %}
+    <p>Results for: "{{ query }}"</p>
+{% endif %}
+
+<ul>
+    {% for result in page.object_list %}
+    <li>{{ result.object.company_name }} - {{ result.object.city }}</li>
+    {% empty %}
+    <li>No results found</li>
+    {% endfor %}
+</ul>

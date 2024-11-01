@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
 
 {% endblock %}
 {% block navbar %}
@@ -17,7 +18,8 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-                <li><input type="submit" class="btn btn-primary" value="Find an Arborist"> </li>
+                <li><a href="{% url 'arborfindr:search_arborist' %}" class="btn btn-primary">Search</a></li>
+
             </ul>
         </div>
     </div>
@@ -26,14 +28,26 @@
 
  {% block content %}
  <div class="container-fluid bg-3 text-center">
-    <form method="get" action="." class="form" role="form">
+    <form method="get" action="/search/" class="form" role="form">
             {{ form.non_field_errors }}
             <div class="form-group">
                     {{ form.as_p }}
             </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Search">
-            </div>
+        <div class="form-group">
+            <input type="text" id="search_input" class="form-control" name="q" placeholder="Search..." autocomplete="off">
+            <input type="submit" class="btn btn-primary" value="Search">
+        </div>
+        </form>
+            <script>
+            $('#search_input').typeahead({
+                source: function(query, process) {
+                    return $.get("{% url 'arborfindr:autocomplete' %}", { q: query }, function(data) {
+                        return process(data);
+                    });
+                },
+                minLength: 1
+            });
+            </script>
 
             {% if query %}
                 <h3>Search Results</h3>
