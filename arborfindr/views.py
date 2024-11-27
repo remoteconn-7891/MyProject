@@ -20,9 +20,28 @@ from .models import ArboristCompany
 
 from django.shortcuts import render
 
+from .forms import ReviewForm
+
 from django.http import JsonResponse
 
+from django.utils import timezone
 
+def review(request):
+    return render(request, 'search_index/arborfindr/search_arborist.html')
+
+@login_required
+def arbor_review(request):
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.user = request.user
+            review.reviewed_on = timezone.now()
+            review.save()
+            return redirect('arborfindr:search_arborist')
+    else:
+        form = ReviewForm()
+    return render(request, 'search_index/arborfindr/arbor_review.html', {'form': form})
 def autocomplete(request):
     if 'q' in request.GET:
         query = request.GET['q']

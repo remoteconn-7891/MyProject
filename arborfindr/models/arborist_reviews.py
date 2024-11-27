@@ -1,21 +1,17 @@
 from django.db import models
-from .arborist_model import Arborist
 from .homeowner_model import Homeowner
 
 
 class ArboristReview(models.Model):
-    arborist = models.ForeignKey(Arborist, on_delete=models.CASCADE)
+    arborist_company = models.ForeignKey('ArboristCompany', on_delete=models.CASCADE, blank=True, null=True)
     user = models.ForeignKey(Homeowner, on_delete=models.CASCADE)
-    one_star = models.IntegerField(default=0, null=True, blank=True)
-    two_stars = models.IntegerField(default=0, null=True, blank=True)
-    three_stars = models.IntegerField(default=0, null=True, blank=True)
-    four_stars = models.IntegerField(default=0, null=True, blank=True)
-    five_stars = models.IntegerField(default=0, null=True, blank=True)
-    review_by_homeowner = models.CharField(max_length=300)
+    rating = models.IntegerField(choices=[(i, f'{i} Star') for i in range(1,6)], default =3)
+    review_text = models.CharField(max_length=250)
+    reviewed_on = models.DateTimeField(auto_now_add=True)
 
     # Metadata for ArboristReview Models
 
     def __str__(self):
-        return f'{self.one_star} ArboristReview'
+        return f'{self.rating} ArboristReview'
 
         

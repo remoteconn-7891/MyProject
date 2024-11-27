@@ -23,7 +23,7 @@ class ArboristAdmin(admin.ModelAdmin):
 
 @admin.register(ArboristReview)
 class ArboristReviewAdmin(admin.ModelAdmin):
-    list_display = ('one_star', 'two_stars', 'three_stars', 'four_stars', 'five_stars', 'review_by_homeowner')
+    list_display = ( 'rating', 'review_text', 'reviewed_on')
 
 @admin.register(ServicesType)
 class ServicesTypeAdmin(admin.ModelAdmin):

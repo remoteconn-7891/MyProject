@@ -133,14 +133,14 @@ WSGI_APPLICATION = 'MyProject.wsgi.application'
 
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('DATABASE_NAME', default='arbordb'),  # Use env to get DB name
-        'USER': env('DATABASE_USER', default='postgres'),  # Use env to get user
-        'PASSWORD': env('DATABASE_PASSWORD', default='arborco87'),  # Use env to get password
-        'HOST': env('DATABASE_HOST', default='localhost'),  # Use env to get host
-        'PORT': env('DATABASE_PORT', default='5432'),  # Use env to get port
-    }
+   'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': env('DATABASE_NAME_NEW', default='newdb'),  # New DB connection for newdb
+    'USER': env('DATABASE_USER_NEW', default='postgres'),
+    'PASSWORD': env('DATABASE_PASSWORD_NEW', default='arborco87'),
+    'HOST': env('DATABASE_HOST_NEW', default='localhost'),
+    'PORT': env('DATABASE_PORT_NEW', default='5432'),
+},
 }
 
 

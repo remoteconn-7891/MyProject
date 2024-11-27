@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from .models import HomeownerUser, ArboristCompany
+from .models import HomeownerUser, ArboristCompany, ArboristReview
 from haystack.forms import SearchForm
 from django.contrib.auth.forms import UserCreationForm
 
@@ -21,6 +21,11 @@ class ArboristCompanyForm(forms.ModelForm):
    class Meta:
       model = ArboristCompany
       fields = ['company_name', 'company_logo']
+
+class ReviewForm(forms.ModelForm):
+   class Meta:
+      model = ArboristReview
+      fields = ['rating', 'review_text']
 
 class CitySearchForm(SearchForm):
    find_city = forms.CharField(required=False)

@@ -19,5 +19,6 @@ path('homeowner_profile/', views.homeowner_profile, name = 'homeowner_profile'),
 path('company_profile/', views.company_profile, name = 'company_profile'),
 path('edit_homeowner_profile/', views.edit_homeowner_profile, name = 'edit_homeowner_profile'),
 path('edit_company_profile/', views.edit_company_profile, name = 'edit_company_profile'),
+path('arbor/review/', views.arbor_review, name='arbor_review'),
 path('arborfindr/', index,),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
