@@ -10,6 +10,8 @@ class ArboristCompanyIndex(indexes.SearchIndex, indexes.Indexable):
     company_price = indexes.IntegerField(model_attr='company_price', null=True)
     experience = indexes.CharField(model_attr='experience')
 
+    def start_review(self, obj):
+        return [review.review_text for review in obj.arboristreview_set.all()]
     def get_model(self):
         return ArboristCompany
 

@@ -59,14 +59,14 @@
 
                     <div class="col-sm-4">
                         <div class="thumbnail">
-                                <p>Arborist city : {{result.company_city}}</p>
-                                <p> Price : {{result.company_price}}</p>
-                                <p> Company : {{result.company}}</p>
-                                <p> One star : {{result.one_star}}</p>
-                                <p> Two star : {{result.two_stars}}</p>
-                                <p> Three stars : {{result.three_stars}}</p>
-                                <p>  Four stars : {{result.four_stars}}</p>
-                                <p> Five stars : {{result.five_stars}}</p>
+                                <p>Arborist city: {{result.company_city}}</p>
+                                <p> Price: {{result.company_price}}</p>
+                                <p> Company: {{result.company}}</p>
+                            <p>Rating:
+                                {% for review in result.reviews %}
+                                {% if review.rating == 1 %}1 Star{% elif review.rating == 2 %}2 Stars{% elif review.rating == 3 %}3 Stars{% elif review.rating == 4 %}4 Stars{% elif review.rating == 5 %}5 Stars{% endif %}
+                                {% endfor %}
+                            </p>
                                 <p> Homeowner review : {{result.review_by_homeowner}}</p>
                                 <p> Tree pruning : {{result.review_by_homeowner}}</p>
                                 <p> Tree removal : {{result.tree_removal}}</p>
@@ -76,6 +76,8 @@
                                 <p> Tree protection : {{result.tree_protection}}</p>
                                 <p> Tree risk management : {{result.tree_risk_management}}</p>
                                 <p> Tree biology : {{result.tree_biology}}</p>
+                                <p><strong>Reviews:</strong></p>
+
                         </div>
                     </div>
                     {% empty %}

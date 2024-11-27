@@ -6,6 +6,8 @@ from django.contrib.auth.forms import PasswordChangeForm
 
 from django.contrib.auth import login, authenticate
 
+from .models import ArboristReview
+
 from .forms import UserForm, HomeownerUserForm, ArboristCompanyForm
 
 from django.contrib.auth.forms import AuthenticationForm
@@ -13,8 +15,6 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 
 from haystack.generic_views import SearchView
-
-from haystack.query import SearchQuerySet
 
 from .models import ArboristCompany
 
@@ -25,6 +25,8 @@ from .forms import ReviewForm
 from django.http import JsonResponse
 
 from django.utils import timezone
+
+from django.db.models import Prefetch
 
 def review(request):
     return render(request, 'search_index/arborfindr/search_arborist.html')
@@ -55,11 +57,10 @@ class ArboristSearchView(SearchView):
     template_name = 'search_index/arborfindr/search_arborist.html'
 
     def get_queryset(self):
-        queryset = SearchQuerySet().models(ArboristCompany)
+        queryset = super().get_queryset().models(ArboristCompany)
+        reviews = ArboristReview.objects.all()
+        queryset = queryset.prefetch_related(Prefetch('arboristreview_set', queryset=reviews, to_attr='reviews'))
 
-        query = self.request.GET.get('q', None)
-        if query:
-            queryset = queryset.filter(content=query)
         return queryset
 
 
