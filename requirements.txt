@@ -39,3 +39,6 @@ tzdata==2024.1
 urllib3==1.26.20
 virtualenv==20.26.6
 virtualenvwrapper-win==1.2.7
+selenium~=4.27.0
+webdriver-manager==4.0.2
+beautifulsoup4~=4.12.3
