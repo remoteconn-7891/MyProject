@@ -1,26 +1,64 @@
-import requests
-from scraper.parser import parse_html  # Absolute import
-from scraper.save_json import save_json  # Absolute import
+from scraper.save_json import save_json
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 
-def scrape_data():
-    """Scrape data from the website and parse it."""
-    url = "https://www.peaktreeco.com/"
+# Setup WebDriver
+options = Options()
+options.headless = True
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'
-    }
+def scrape_peaktreeco():
+    driver.get("https://www.peaktreeco.com/")
 
-    # Requesting data from the website
-    response = requests.get(url, headers=headers)
+    # Company Name and Location
+    company_name = driver.title.split(" | ")[0]
+    location = "Colorado Springs, CO" if "Peak Tree" in company_name else "Location not found"
 
-    if response.status_code == 200:  # Check if the request was successful
-        # Parse the HTML using the function from parser.py
-        parsed_data = parse_html(response.text)
+    # Services
+    try:
+        services_elements = driver.execute_script(
+            '''
+            let services = Array.from(document.querySelectorAll('li[role="menuitem"] > a > span.nav-item-text'));
+            return services.map(el => el.innerText).join(", ");
+            '''
+        )
+        services = services_elements if services_elements else "Services not found"
+    except Exception:
+        services = "Services not found"
 
-        # Save the parsed data to a JSON file
-        save_json(parsed_data)
-    else:
-        print(f"Failed to retrieve data from {url}. Status code: {response.status_code}")
+    return company_name, location, services
 
-if __name__ == "__main__":
-    scrape_data()
+def scrape_peaktreeco_reviews():
+    driver.get("https://www.peaktreeco.com/tree-trimming")
+
+    # Reviewer Name
+    try:
+        reviewer_name = driver.execute_script(
+            'return document.querySelector("p.tmName")?.innerText || ""'
+        )
+    except Exception:
+        reviewer_name = "Reviewer name not found"
+
+    # Review Text
+    try:
+        review_text = driver.execute_script(
+            'return document.querySelector("p.tmBody")?.innerText || ""'
+        )
+    except Exception:
+        review_text = "Review text not found"
+
+    return reviewer_name, review_text
+
+# Execute the scrapers
+peaktreeco_data = scrape_peaktreeco()
+peaktreeco_reviews = scrape_peaktreeco_reviews()
+
+# Print the results
+
+print(f"Peaktreeco.com - Company: {peaktreeco_data[0]}, Location: {peaktreeco_data[1]}, Services: {peaktreeco_data[2]}")
+print(f"Peaktreeco Reviews - Reviewer: {peaktreeco_reviews[0]}, Review: {peaktreeco_reviews[1]}")
+
+# Close the driver
+driver.quit()
