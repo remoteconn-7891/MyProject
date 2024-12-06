@@ -1,0 +1,18 @@
+{
+    "company": {
+        "name": "Peak Tree Service",
+        "location": "Colorado Springs, CO",
+        "services": [
+            "Tree Services",
+            "Tree Trimming",
+            "Tree Removal",
+            "Fire Mitigation",
+            "Stump Removal",
+            "Emergency Services"
+        ]
+    },
+    "review": {
+        "reviewer": "- Nate Stockdale",
+        "review_text": "\"I really appreciated the ease of the whole process from the estimate to the finished product. I also enjoyed their Arborist knowledge and excitement when talking to him about trees in general.\""
+    }
+}
