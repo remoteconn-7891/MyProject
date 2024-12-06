@@ -1,5 +1,4 @@
 import json
-
 from scraper.pikes_peak import scraped_data
 
 # serialize json

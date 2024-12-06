@@ -1,24 +1,24 @@
+from selenium.webdriver.chrome.service import Service # manages Chrome Webdriver service
+from selenium.webdriver.chrome.options import Options # Allows setting Chrome options, like headless mode
+from selenium import webdriver # provides Webdriver for controlling the browser
+from webdriver_manager.chrome import ChromeDriverManager # automatically downloads the ChromeDriver
 
-from selenium.webdriver.chrome.service import Service  # Manages the Chrome WebDriver service.
-from selenium.webdriver.chrome.options import Options  # Allows setting Chrome options, like headless mode.
-from selenium import webdriver  # Provides WebDriver for controlling the browser.
-from webdriver_manager.chrome import ChromeDriverManager  # Automatically downloads the ChromeDriver.
+# set up Webdriver options
 
-# Setup WebDriver options
 options = Options()
-options.headless = True  # Runs Chrome in headless mode (without opening a browser window).
+options.headless = True # runs Chrome in headless mode
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
 def scrape_peaktreeco():
-    driver.get("https://www.peaktreeco.com/")  # Opens the specified URL in the browser.
+    driver.get("https://www.peaktreeco.com/") # sends GET request to specified url
 
-    # Extract company name from the page title
-    company_name = driver.title.split(" | ")[0]  # Splits the page title to get the company name before "|".
+    # extract company name for the home page
+    company_name = driver.title.split(" | ")[0] # split the page to get company name before "|"
 
-    # Set a default location based on the company name
+    # set default location of company
     location = "Colorado Springs, CO" if "Peak Tree" in company_name else "Location not found"
 
-    # Extract services offered by the company
+    # extract services offered by the company
     try:
         services_elements = driver.execute_script(
             '''
@@ -26,52 +26,68 @@ def scrape_peaktreeco():
             return services.map(el => el.innerText);
             '''
         )
-        # Uses JavaScript to get all service items in the navigation menu.
-        # `Array.from` creates an array from the elements selected by `querySelectorAll`.
-        # `map` iterates over each element and extracts the text inside (`innerText`).
 
-        # Exclude unwanted items from the services list
-        exclude_items = {"Home", "Request an Estimate", "Gallery", "About", "Contact"}  # Services to exclude.
+        # uses JavaScript to get all service items in navigation menu
+        # 'Array.from' creates an array from the elements selected by 'querySelectorAll'
+        # 'map' iterates over each element & extracts the text inside ('innerText')
+
+        # excludes unnecessary items from the services list
+        exclude_items = {"Home", "Request an Estimate", "Gallery", "About", "Contact"} # exclude texts
+
+        # use list comprehension to keep only services that are not excluded
         filtered_services = [service for service in services_elements if service not in exclude_items]
-        # List comprehension that keeps only services not in the exclude_items set.
 
+        # joins the filtered services into one string separated by commas
         services = ", ".join(filtered_services) if filtered_services else "Services not found"
-        # Joins the filtered services into a single string separated by commas.
     except Exception:
-        services = "Services not found"  # Fallback in case of an error.
+        # exception in case of error
+        services = "services not found"
 
-    return company_name, location, services  # Returns extracted data as a tuple.
+        # since it is items, return extracted data as tuple
+    return company_name, location, services
 
 def scrape_peaktreeco_reviews():
-    driver.get("https://www.peaktreeco.com/tree-trimming")  # Opens the reviews page.
+    # sends GET request to Tree Trimming page where customer review is
+    driver.get("https://www.peaktreeco.com/tree-trimming")
 
-    # Extract the reviewer's name
+    # extracts reviewer's name
     try:
         reviewer_name = driver.execute_script(
             'return document.querySelector("p.tmName")?.innerText || ""'
         )
-        # Uses JavaScript to select the element with class `tmName` and return its text content.
-        # `?.` is optional chaining, which prevents errors if the element is not found.
-        # `|| ""` ensures it returns an empty string if the element doesn't exist.
-    except Exception:
-        reviewer_name = "Reviewer name not found"  # Fallback for any errors.
 
-    # Extract the review text
+        # uses JavaScript to select the element with class 'tmName' and return its text content
+        # `?.` is optional chaining, which prevents errors if the element isn't found
+        # `|| ""` ensures it returns an empty string if the element doesn't exist
+
+    except Exception:
+        # exception for any errors
+        reviewer_name = "Reviewer name not found"
+
+    # extract review comment (text)
+
     try:
         review_text = driver.execute_script(
             'return document.querySelector("p.tmBody")?.innerText || ""'
         )
-        # Similar to the above, but targets the element with class `tmBody` for the review content.
+
+        # targets elements with class 'tmBody' for review comment
+
     except Exception:
-        review_text = "Review text not found"  # Fallback in case of an error.
+        review_text = "review not found"
 
-    return reviewer_name, review_text  # Returns the reviewer's name and review text.
+    # returns both the reviewer & review text
+    return reviewer_name, review_text
 
-# Execute the scrapers
-peaktreeco_data = scrape_peaktreeco()  # Scrapes company data.
-peaktreeco_reviews = scrape_peaktreeco_reviews()  # Scrapes review data.
+# execute the scrapers to scrape data
 
-# create Python dictionary for scraped Pikes Peak Service
+# company name
+peaktreeco_data = scrape_peaktreeco()
+
+# review
+peaktreeco_reviews = scrape_peaktreeco_reviews()
+
+# create Python dictionary to convert to JSON and then save in JSON file
 scraped_data = {
     "company": {
         "name": peaktreeco_data[0],
@@ -84,10 +100,9 @@ scraped_data = {
     }
 }
 
-# Print the results in a readable format
-print(f"Peaktreeco.com - Company: {peaktreeco_data[0]}, Location: {peaktreeco_data[1]}, Services: {peaktreeco_data[2]}")
+# prints the results of scraped data
+print(f"Peaktreeco.com - {peaktreeco_data[0]}, Location: {peaktreeco_data[1]}, Services: {peaktreeco_data[2]}")
 print(f"Peaktreeco Reviews - Reviewer: {peaktreeco_reviews[0]}, Review: {peaktreeco_reviews[1]}")
 
-# Close the WebDriver session
+# close WebDriver session
 driver.quit()
-
