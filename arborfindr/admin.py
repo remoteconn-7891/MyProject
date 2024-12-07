@@ -1,13 +1,8 @@
-
 from django.contrib.auth import get_user_model
 from django.contrib import admin
-from .models import Homeowner
-from .models import Arborist
-from .models import ArboristReview
-from .models import ServicesType
-from .models import ArboristCompany
+from .models import Homeowner, Arborist, ArboristReview, ServiceType, ArboristCompany
 
-
+# Get the user model
 User = get_user_model()
 admin.site.register(User)
 
@@ -15,7 +10,7 @@ admin.site.register(User)
 
 @admin.register(Homeowner)
 class HomeownerAdmin(admin.ModelAdmin):
-    list_display = ('bio', 'profile_pic')
+    list_display = ('bio', 'profile_pic')  # Adjust fields as per your model
 
 @admin.register(Arborist)
 class ArboristAdmin(admin.ModelAdmin):
@@ -23,15 +18,19 @@ class ArboristAdmin(admin.ModelAdmin):
 
 @admin.register(ArboristReview)
 class ArboristReviewAdmin(admin.ModelAdmin):
-    list_display = ( 'rating', 'review_text', 'reviewed_on')
+    list_display = ('rating', 'review_text', 'reviewed_on')
 
-@admin.register(ServicesType)
-class ServicesTypeAdmin(admin.ModelAdmin):
-    list_display = ('tree_pruning', 'tree_removal', 'tree_planting', 'pesticide_applications', 'soil_management',
-                    'tree_protection', 'tree_risk_management', 'tree_biology')
+@admin.register(ServiceType)
+class ServiceTypeAdmin(admin.ModelAdmin):
+    list_display = ('name',)  # Single field `name` for service types
 
 @admin.register(ArboristCompany)
 class ArboristCompanyAdmin(admin.ModelAdmin):
-    list_display = ('company_name', 'company_logo')
+    list_display = ('company_name', 'company_logo', 'company_city', 'company_state', 'experience', 'price_display')  # Use price_display here
+    filter_horizontal = ('services',)
+
+    # Add many-to-many fields for display if needed
+  # Add a horizontal filter widget for many-to-many relationships
+
 
 

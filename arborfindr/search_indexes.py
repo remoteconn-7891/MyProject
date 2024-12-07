@@ -1,17 +1,20 @@
 from haystack import indexes
-from .models import ArboristCompany, ArboristReview, ServicesType
+from .models import ArboristCompany, ArboristReview, ServiceType
 
 
-class ArboristCompanyIndex(indexes.SearchIndex, indexes.Indexable): 
+class ArboristCompanyIndex(indexes.SearchIndex, indexes.Indexable):
     text = indexes.EdgeNgramField(document=True, use_template=True)
     company_name = indexes.CharField(model_attr='company_name')
     company_city = indexes.CharField(model_attr='company_city')
     company_state = indexes.CharField(model_attr='company_state')
-    company_price = indexes.IntegerField(model_attr='company_price', null=True)
+
+    # Instead of directly indexing company_price, use the price_display method
+    company_price_display = indexes.CharField(model_attr='price_display', null=True)  # Using the custom price_display method
     experience = indexes.CharField(model_attr='experience')
 
     def start_review(self, obj):
         return [review.review_text for review in obj.arboristreview_set.all()]
+
     def get_model(self):
         return ArboristCompany
 
@@ -38,21 +41,16 @@ class ArboristReviewIndex(indexes.SearchIndex, indexes.Indexable):
         print(f'Indexing {qs.count()} ArboristReviews records')  # Print the count of records
         return qs
 
-class ServicesTypeIndex(indexes.SearchIndex, indexes.Indexable):
+class ServiceTypeIndex(indexes.SearchIndex, indexes.Indexable):
     text = indexes.EdgeNgramField(document=True, use_template=True)
-    tree_pruning = indexes.CharField(model_attr='tree_pruning')
-    tree_removal = indexes.CharField(model_attr='tree_removal')
-    tree_planting = indexes.CharField(model_attr='tree_planting')
-    pesticide_applications = indexes.CharField(model_attr='pesticide_applications')
-    soil_management = indexes.CharField(model_attr='soil_management')
-    tree_protection = indexes.CharField(model_attr='tree_protection')
-    tree_risk_management = indexes.CharField(model_attr='tree_risk_management')
-    tree_biology = indexes.CharField(model_attr='tree_biology')
+    # Update the fields to match the correct attribute names in the ServiceType model.
+    # Assuming you want to index a `name` or similar attribute instead of the previous redundant ones.
+    name = indexes.CharField(model_attr='name')  # Assuming the `ServiceType` model has a `name` attribute
 
     def get_model(self):
-        return ServicesType
+        return ServiceType
 
     def index_queryset(self, using=None):
         qs = self.get_model().objects.all()  # Get the queryset
-        print(f'Indexing {qs.count()} ServicesType records')  # Print the count of records
+        print(f'Indexing {qs.count()} ServiceType records')  # Print the count of records
         return qs

@@ -1,5 +1,5 @@
 {{ object.company_name }}
 {{ object.company_city }}
 {{ object.company_state }}
-{{ object.company_price }}
+{{ object.company_price_display }}
 {{ object.experience }}

@@ -1,8 +1,1 @@
-{{object.tree_pruning}}
-{{object.tree_removal}}
-{{object.tree_planting}}
-{{object.pesticide_applications}}
-{{object.soil_management}}
-{{object.tree_protection}}
-{{object.tree_risk_management}}
-{{object.tree_biology}}
+{{ object.name }}  # Adjusted to match the updated field in the ServiceType model

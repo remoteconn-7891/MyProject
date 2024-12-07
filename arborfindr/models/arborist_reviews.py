@@ -10,8 +10,10 @@ class ArboristReview(models.Model):
     reviewed_on = models.DateTimeField(auto_now_add=True)
 
     # Metadata for ArboristReview Models
+    class Meta:
+        db_table = 'arborfindr_arboristreview'
 
-    def __str__(self):
+def __str__(self):
         return f'{self.rating} ArboristReview'
 
         
