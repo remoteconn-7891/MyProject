@@ -9,8 +9,7 @@ env = environ.Env()
 # Read the .env file if it exists
 environ.Env.read_env(os.path.join(Path(__file__).resolve().parent.parent, '.env'))
 
-GOOGLE_API_KEY=your_google_api_key
-GOOGLE_SEARCH_ENGINE_ID=your_search_engine_id
+
 
 
 # Log the values of the environment variables
