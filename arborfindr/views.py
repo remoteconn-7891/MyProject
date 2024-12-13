@@ -5,6 +5,7 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 
 from django.contrib.auth import login, authenticate
+from rest_framework.decorators import api_view
 
 from .serializers import ArboristCompanySerializer, ArboristReviewSerializer, ServiceTypeSerializer
 
@@ -30,63 +31,64 @@ from django.db.models import Prefetch
 
 from .serializers import HomeownerSerializer
 
-from rest_framework.parsers import JSONParser
+from rest_framework.response import Response
 
+from rest_framework import status
 
+@api_view(['GET', 'POST'])
 def homeowner_info(request):
     if request.method == 'GET':
         homeowner = Homeowner.objects.all()
         serializer = HomeownerSerializer(homeowner, many=True)
-        return JsonResponse(serializer.data, safe=False)
+        return Response(serializer.data)
     elif request.method == 'POST':
-        data = JSONParser.parse(request)
-        serializer = HomeownerSerializer(data=data)
+        serializer = HomeownerSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return JsonResponse(serializer.data, status=201)
-        return JsonResponse(serializer.errors, status=400)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+@api_view(['GET', 'POST'])
 def company_info(request):
     if request.method == 'GET':
         company = ArboristCompany.objects.all()
         serializer = ArboristCompanySerializer(company, many=True)
-        return JsonResponse(serializer.data, safe=False)
+        return Response(serializer.data)
     elif request.method == 'POST':
-        data = JSONParser.parse(request)
-        serializer = ArboristCompanySerializer(data=data)
+        serializer = ArboristCompanySerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return JsonResponse(serializer.data, status=201)
-        return JsonResponse(serializer.errors, status=400)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+@api_view(['GET', 'POST'])
 def review_info(request):
     if request.method == 'GET':
         review_arbor = ArboristReview.objects.all()
         serializer = ArboristReviewSerializer(review_arbor, many=True)
-        return JsonResponse(serializer.data, safe=False)
+        return Response(serializer.data)
     elif request.method == 'POST':
-        data = JSONParser.parse(request)
-        serializer = ArboristReviewSerializer(data=data)
+        serializer = ArboristReviewSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return JsonResponse(serializer.data, status=201)
-        return JsonResponse(serializer.errors, status=400)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+@api_view(['GET', 'POST'])
 def services_info(request):
     if request.method == 'GET':
         services = ServiceType.objects.all()
         serializer = ServiceTypeSerializer(services, many=True)
-        return JsonResponse(serializer.data, safe=False)
+        return Response(serializer.data)
     elif request.method == 'POST':
-        data = JSONParser.parse(request)
-        serializer = ServiceTypeSerializer(data=data)
+        serializer = ServiceTypeSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return JsonResponse(serializer.data, status=201)
-        return JsonResponse(serializer.errors, status=400)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 
