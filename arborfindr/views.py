@@ -6,9 +6,7 @@ from django.contrib.auth.forms import PasswordChangeForm
 
 from django.contrib.auth import login, authenticate
 
-from models import Homeowner
-
-from serializers import ArboristCompanySerializer, ArboristReviewSerializer, ServiceTypeSerializer
+from .serializers import ArboristCompanySerializer, ArboristReviewSerializer, ServiceTypeSerializer
 
 from .forms import UserForm, HomeownerUserForm, ArboristCompanyForm
 
@@ -18,7 +16,7 @@ from django.contrib.auth.decorators import login_required
 
 from haystack.generic_views import SearchView
 
-from .models import ArboristCompany, ArboristReview, ServiceType
+from .models import ArboristCompany, ArboristReview, ServiceType, Homeowner
 
 from django.shortcuts import render
 
@@ -65,8 +63,8 @@ def company_info(request):
 
 def review_info(request):
     if request.method == 'GET':
-        company = ArboristReview.objects.all()
-        serializer = ArboristReviewSerializer(company, many=True)
+        review_arbor = ArboristReview.objects.all()
+        serializer = ArboristReviewSerializer(review_arbor, many=True)
         return JsonResponse(serializer.data, safe=False)
     elif request.method == 'POST':
         data = JSONParser.parse(request)
@@ -79,8 +77,8 @@ def review_info(request):
 
 def services_info(request):
     if request.method == 'GET':
-        company = ServiceType.objects.all()
-        serializer = ServiceTypeSerializer(company, many=True)
+        services = ServiceType.objects.all()
+        serializer = ServiceTypeSerializer(services, many=True)
         return JsonResponse(serializer.data, safe=False)
     elif request.method == 'POST':
         data = JSONParser.parse(request)
