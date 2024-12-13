@@ -7,7 +7,8 @@ from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import login, authenticate
 
 from models import Homeowner
-from .models import ArboristReview
+
+from serializers import ArboristCompanySerializer, ArboristReviewSerializer, ServiceTypeSerializer
 
 from .forms import UserForm, HomeownerUserForm, ArboristCompanyForm
 
@@ -17,7 +18,7 @@ from django.contrib.auth.decorators import login_required
 
 from haystack.generic_views import SearchView
 
-from .models import ArboristCompany
+from .models import ArboristCompany, ArboristReview, ServiceType
 
 from django.shortcuts import render
 
@@ -33,6 +34,7 @@ from .serializers import HomeownerSerializer
 
 from rest_framework.parsers import JSONParser
 
+
 def homeowner_info(request):
     if request.method == 'GET':
         homeowner = Homeowner.objects.all()
@@ -46,9 +48,52 @@ def homeowner_info(request):
             return JsonResponse(serializer.data, status=201)
         return JsonResponse(serializer.errors, status=400)
 
+
+def company_info(request):
+    if request.method == 'GET':
+        company = ArboristCompany.objects.all()
+        serializer = ArboristCompanySerializer(company, many=True)
+        return JsonResponse(serializer.data, safe=False)
+    elif request.method == 'POST':
+        data = JSONParser.parse(request)
+        serializer = ArboristCompanySerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data, status=201)
+        return JsonResponse(serializer.errors, status=400)
+
+
+def review_info(request):
+    if request.method == 'GET':
+        company = ArboristReview.objects.all()
+        serializer = ArboristReviewSerializer(company, many=True)
+        return JsonResponse(serializer.data, safe=False)
+    elif request.method == 'POST':
+        data = JSONParser.parse(request)
+        serializer = ArboristReviewSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data, status=201)
+        return JsonResponse(serializer.errors, status=400)
+
+
+def services_info(request):
+    if request.method == 'GET':
+        company = ServiceType.objects.all()
+        serializer = ServiceTypeSerializer(company, many=True)
+        return JsonResponse(serializer.data, safe=False)
+    elif request.method == 'POST':
+        data = JSONParser.parse(request)
+        serializer = ServiceTypeSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data, status=201)
+        return JsonResponse(serializer.errors, status=400)
+
+
+
 def review(request):
     return render(request, 'search_index/arborfindr/search_arborist.html')
-
 
 
 @login_required
