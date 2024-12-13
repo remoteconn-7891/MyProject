@@ -6,6 +6,7 @@ from django.contrib.auth.forms import PasswordChangeForm
 
 from django.contrib.auth import login, authenticate
 
+from models import Homeowner
 from .models import ArboristReview
 
 from .forms import UserForm, HomeownerUserForm, ArboristCompanyForm
@@ -28,8 +29,27 @@ from django.utils import timezone
 
 from django.db.models import Prefetch
 
+from .serializers import HomeownerSerializer
+
+from rest_framework.parsers import JSONParser
+
+def homeowner_info(request):
+    if request.method == 'GET':
+        homeowner = Homeowner.objects.all()
+        serializer = HomeownerSerializer(homeowner, many=True)
+        return JsonResponse(serializer.data, safe=False)
+    elif request.method == 'POST':
+        data = JSONParser.parse(request)
+        serializer = HomeownerSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data, status=201)
+        return JsonResponse(serializer.errors, status=400)
+
 def review(request):
     return render(request, 'search_index/arborfindr/search_arborist.html')
+
+
 
 @login_required
 def arbor_review(request):
