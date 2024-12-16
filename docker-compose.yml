@@ -9,11 +9,17 @@ services:
       - "8000:8000"
     environment:
       - DEBUG=1
+      - DATABASE_NAME_NEW=newdb
+      - DATABASE_USER_NEW=postgres
+      - DATABASE_PASSWORD_NEW=arborco87
+      - DATABASE_HOST_NEW=postgres  # Use the service name for the database host
+      - DATABASE_PORT_NEW=5432
     depends_on:
       - solr
+      - postgres
     command: >
       sh -c "python manage.py runserver 0.0.0.0:8000"
-  
+
   solr:
     image: solr:latest
     ports:
@@ -22,5 +28,18 @@ services:
       - solr_data:/var/solr
     command: solr-foreground
 
+  postgres:
+    image: postgres:latest
+    environment:
+      - POSTGRES_DB=newdb
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=arborco87
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
 volumes:
   solr_data:
+  postgres_data:
+
