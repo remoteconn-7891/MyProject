@@ -36,6 +36,9 @@ from rest_framework.response import Response
 
 from rest_framework import status
 
+# Methods for the API endpoints to be exposed to the frontend for all four models
+
+# API endpoint for Homeowner
 @api_view(['GET', 'POST'])
 def homeowner_info(request):
     if request.method == 'GET':
@@ -50,6 +53,7 @@ def homeowner_info(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+# API endpoint for ArboristCompany
 @api_view(['GET', 'POST'])
 def company_info(request):
     if request.method == 'GET':
@@ -64,6 +68,7 @@ def company_info(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+# API endpoint for ArboristReview
 @api_view(['GET', 'POST'])
 def review_info(request):
     if request.method == 'GET':
@@ -78,6 +83,7 @@ def review_info(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+# API endpoint for ServiceType
 @api_view(['GET', 'POST'])
 def services_info(request):
     if request.method == 'GET':
@@ -97,6 +103,7 @@ def review(request):
     return render(request, 'search_index/arborfindr/search_arborist.html')
 
 
+# view for review of arborist left by homeowner
 @login_required
 def arbor_review(request):
     if request.method == 'POST':
@@ -110,6 +117,8 @@ def arbor_review(request):
     else:
         form = ReviewForm()
     return render(request, 'search_index/arborfindr/arbor_review.html', {'form': form})
+
+# view to query fields indexed for arborist company in the Solr search engine
 def autocomplete(request):
     if 'q' in request.GET:
         query = request.GET['q']
@@ -133,7 +142,7 @@ class ArboristSearchView(SearchView):
 def index(request):
     return render(request, 'search_index/arborfindr/search_arborist.html', {})
 
-
+# view for registration page
 def register(request):
     if request.method == 'POST':
         form = UserForm(request.POST)
@@ -149,6 +158,7 @@ def register(request):
     return render(request, 'registration/register.html', {'form': form})
 
 
+# view for login page
 def user_login(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, request.POST)
@@ -175,6 +185,8 @@ def update_password(request):
         form = PasswordChangeForm(request.user)
     return render(request, 'registration/update_password.html', {'form': form})
 
+
+# view for homeowner dashboard once logged in
 @login_required
 def homeowner_profile(request):
     profile = request.user.profile
