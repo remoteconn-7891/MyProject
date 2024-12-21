@@ -3,10 +3,11 @@ version: '3.8'
 services:
   web:
     build: .
+    image: arborhub
     volumes:
       - .:/app
     ports:
-      - "8000:8000"
+      - "8001:8001"
     environment:
       - DEBUG=1
       - DATABASE_NAME_NEW=newdb
@@ -18,14 +19,14 @@ services:
       - solr
       - postgres
     command: >
-      sh -c "python manage.py runserver 0.0.0.0:8000"
+      # sh -c "python manage.py runserver 0.0.0.0:8000"
 
   solr:
     image: solr:latest
     ports:
-      - "8984:8983"
+      - "8986:8983"
     volumes:
-      - solr_data:/var/solr
+      - /mnt/c/solr-9.7.0/core_arbor:/opt/solr/server/solr/mycores/core_arbor  # Updated to match your CMD
     command: solr-foreground
 
   postgres:
@@ -35,7 +36,7 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=arborco87
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
 

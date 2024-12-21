@@ -68,16 +68,18 @@ INSTALLED_APPS = [
     'rest_framework',
     'haystack',
     'django_extensions',
+    'corsheaders',
     'arborfindr',
 ]
 
 HAYSTACK_CONNECTIONS = {
     'default': {
         'BACKEND': 'haystack.backends.solr_backend.SolrBackend',
-        'URL': 'http://localhost:8983/solr/core_arbor/',  # Adjust the core name as necessary
+        'URL': 'http://localhost:8986/solr/core_arbor/',  # Adjust the core name as necessary
         'INCLUDE_SPELLING': True,
     },
 }
+
 
 
 
@@ -97,6 +99,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+# Insert CorsMiddleware at the beginning
+MIDDLEWARE.insert(0, 'corsheaders.middleware.CorsMiddleware')
+
+# CORS settings
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5174",  # Add your frontend's URL
 ]
 
 ROOT_URLCONF = 'MyProject.urls'
@@ -142,7 +152,7 @@ DATABASES = {
     'USER': env('DATABASE_USER_NEW', default='postgres'),
     'PASSWORD': env('DATABASE_PASSWORD_NEW', default='arborco87'),
     'HOST': env('DATABASE_HOST_NEW', default='localhost'),
-    'PORT': env('DATABASE_PORT_NEW', default='5432'),
+    'PORT': env('DATABASE_PORT_NEW', default='5433'),
 },
 }
 
@@ -182,6 +192,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') 
 MEDIA_URL = '/media/'
