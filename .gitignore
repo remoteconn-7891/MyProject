@@ -157,6 +157,8 @@ dmypy.json
 # pytype static type analyzer
 .pytype/
 
+/core_arbor/
+
 # Cython debug symbols
 cython_debug/
 
